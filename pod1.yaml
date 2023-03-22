@@ -1,0 +1,18 @@
+# Create a Pod in namespace dev01 with image nginx .The pod should be named devpod & container name dev-c1.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: devpod
+  labels:
+    name: mypod
+spec:
+  containers:
+  - name: dev-c1
+    image: nginx
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
